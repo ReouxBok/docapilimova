@@ -1,0 +1,161 @@
+---
+title: 'Démarrage rapide'
+description: 'Guide de démarrage rapide pour l\'API Limova'
+---
+
+# Démarrage rapide
+
+Ce guide vous aidera à commencer rapidement avec l'API Limova en quelques étapes simples.
+
+## 🎯 Prérequis
+
+- Un compte Limova actif
+- Un token d'API valide
+- Connaissance de base des requêtes HTTP
+
+## 📋 Étapes de démarrage
+
+### 1. Obtenir votre token d'API
+
+1. Connectez-vous à votre [dashboard Limova](https://dashboard.limova.com)
+2. Allez dans la section "API Keys"
+3. Générez un nouveau token
+4. Copiez le token (vous en aurez besoin pour toutes les requêtes)
+
+### 2. Tester votre première requête
+
+Voici un exemple simple pour récupérer tous vos agents :
+
+```bash
+curl -X GET "https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net/agent" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json"
+```
+
+### 3. Créer votre premier agent
+
+```bash
+curl -X POST "https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net/agent" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Mon Premier Agent",
+    "description": "Un agent IA pour tester l'API",
+    "prompt": "Tu es un assistant IA utile et amical."
+  }'
+```
+
+### 4. Utiliser les outils LIMOVA
+
+Testez la génération d'image :
+
+```bash
+curl -X POST "https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net/limova/image-generation" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "prompt": "Un chat mignon dans un jardin",
+    "size": "1024x1024"
+  }'
+```
+
+## 🔧 Exemples par langage
+
+### JavaScript (Node.js)
+
+```javascript
+const axios = require('axios');
+
+const apiClient = axios.create({
+  baseURL: 'https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net',
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN',
+    'Content-Type': 'application/json'
+  }
+});
+
+// Récupérer tous les agents
+const getAgents = async () => {
+  try {
+    const response = await apiClient.get('/agent');
+    console.log(response.data);
+  } catch (error) {
+    console.error('Erreur:', error.response.data);
+  }
+};
+```
+
+### Python
+
+```python
+import requests
+
+API_BASE_URL = "https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net"
+API_TOKEN = "YOUR_TOKEN"
+
+headers = {
+    "Authorization": f"Bearer {API_TOKEN}",
+    "Content-Type": "application/json"
+}
+
+# Récupérer tous les agents
+response = requests.get(f"{API_BASE_URL}/agent", headers=headers)
+print(response.json())
+```
+
+### PHP
+
+```php
+<?php
+$apiBaseUrl = "https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net";
+$apiToken = "YOUR_TOKEN";
+
+$headers = [
+    "Authorization: Bearer " . $apiToken,
+    "Content-Type: application/json"
+];
+
+// Récupérer tous les agents
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $apiBaseUrl . "/agent");
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+```
+
+## 🚨 Gestion des erreurs
+
+L'API retourne des codes HTTP standard :
+
+- `200` : Succès
+- `400` : Requête invalide
+- `401` : Token manquant ou invalide
+- `403` : Accès refusé
+- `404` : Ressource non trouvée
+- `429` : Trop de requêtes
+- `500` : Erreur serveur
+
+## 📊 Monitoring
+
+Surveillez votre utilisation :
+- Consultez votre dashboard pour voir les statistiques
+- Vérifiez votre solde de tokens
+- Surveillez les limites de taux
+
+## 🔄 Prochaines étapes
+
+1. **Explorez les modules** : Commencez par les agents, puis explorez LIMOVA
+2. **Lisez la documentation** : Chaque route a une documentation détaillée
+3. **Testez les exemples** : Utilisez les exemples cURL fournis
+4. **Intégrez dans votre app** : Utilisez les exemples de code
+
+## 📞 Besoin d'aide ?
+
+- **Documentation** : Consultez les pages détaillées de chaque route
+- **Support** : support@limova.com
+- **Dashboard** : https://dashboard.limova.com 

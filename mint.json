@@ -1,0 +1,305 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Limova API",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#0EA5E9",
+    "light": "#0EA5E9",
+    "dark": "#0284C7"
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:support@limova.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://dashboard.limova.com"
+  },
+  "anchors": [
+    {
+      "name": "Support",
+      "icon": "headphones",
+      "url": "mailto:support@limova.com"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/limova"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Introduction",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "authentication"
+      ]
+    },
+    {
+      "group": "Agents",
+      "pages": [
+        "agents/introduction",
+        "agents/create",
+        "agents/get-all",
+        "agents/get-by-id",
+        "agents/update",
+        "agents/delete",
+        "agents/desactivate",
+        "agents/add-files",
+        "agents/remove-files"
+      ]
+    },
+    {
+      "group": "Conversations",
+      "pages": [
+        "conversations/introduction",
+        "conversations/get-by-agent",
+        "conversations/update",
+        "conversations/delete",
+        "conversations/export-by-agent",
+        "conversations/export-by-ids"
+      ]
+    },
+    {
+      "group": "Leads",
+      "pages": [
+        "leads/introduction",
+        "leads/create",
+        "leads/get-all",
+        "leads/get-by-id",
+        "leads/get-by-conversation",
+        "leads/update",
+        "leads/update-status",
+        "leads/delete"
+      ]
+    },
+    {
+      "group": "Connecteurs",
+      "pages": [
+        "connectors/introduction",
+        "connectors/snippets/create",
+        "connectors/snippets/get-all",
+        "connectors/snippets/get-by-agent",
+        "connectors/snippets/get-heads",
+        "connectors/snippets/update",
+        "connectors/snippets/delete",
+        "connectors/snippets/upload-heads",
+        "connectors/whatsapp/get-first-message",
+        "connectors/whatsapp/set-first-message"
+      ]
+    },
+    {
+      "group": "LIMOVA - Facturation",
+      "pages": [
+        "limova/billing/introduction",
+        "limova/billing/get-bills",
+        "limova/billing/get-payment-methods",
+        "limova/billing/get-all-active-users",
+        "limova/billing/get-balance",
+        "limova/billing/add-balance-money",
+        "limova/billing/upsert-auto-refill",
+        "limova/billing/get-token-balance",
+        "limova/billing/buy-token-balance"
+      ]
+    },
+    {
+      "group": "LIMOVA - Fichiers",
+      "pages": [
+        "limova/files/introduction",
+        "limova/files/add-client-file",
+        "limova/files/delete-client-file"
+      ]
+    },
+    {
+      "group": "LIMOVA - Utilisateurs",
+      "pages": [
+        "limova/users/introduction",
+        "limova/users/search-by-email"
+      ]
+    },
+    {
+      "group": "LIMOVA - SEO",
+      "pages": [
+        "limova/seo/introduction",
+        "limova/seo/create-job",
+        "limova/seo/get-jobs",
+        "limova/seo/get-job-by-id",
+        "limova/seo/update-job",
+        "limova/seo/delete-job",
+        "limova/seo/get-job-history",
+        "limova/seo/get-job-history-by-id",
+        "limova/seo/delete-job-history",
+        "limova/seo/get-job-result",
+        "limova/seo/get-job-status",
+        "limova/seo/generate-article",
+        "limova/seo/get-articles",
+        "limova/seo/get-article-by-id",
+        "limova/seo/get-articles-by-seo-job-id",
+        "limova/seo/delete-article",
+        "limova/seo/create-platform",
+        "limova/seo/get-platforms",
+        "limova/seo/update-platform",
+        "limova/seo/delete-platform",
+        "limova/seo/test-wix-config",
+        "limova/seo/test-wordpress-config"
+      ]
+    },
+    {
+      "group": "LIMOVA - Social Post",
+      "pages": [
+        "limova/social-post/introduction",
+        "limova/social-post/create-post",
+        "limova/social-post/get-posts",
+        "limova/social-post/get-post-by-id",
+        "limova/social-post/update-post",
+        "limova/social-post/delete-post",
+        "limova/social-post/get-jobs-by-day",
+        "limova/social-post/share-now",
+        "limova/social-post/get-post-history",
+        "limova/social-post/get-post-history-by-id",
+        "limova/social-post/update-post-history",
+        "limova/social-post/delete-post-history",
+        "limova/social-post/refresh-tokens",
+        "limova/social-post/delete-tokens"
+      ]
+    },
+    {
+      "group": "LIMOVA - LinkedIn Automation",
+      "pages": [
+        "limova/linkedin-automation/introduction",
+        "limova/linkedin-automation/search-profiles",
+        "limova/linkedin-automation/search-companies",
+        "limova/linkedin-automation/search-posts",
+        "limova/linkedin-automation/get-profile-info",
+        "limova/linkedin-automation/get-company-info",
+        "limova/linkedin-automation/get-user-profile",
+        "limova/linkedin-automation/get-profile-contact",
+        "limova/linkedin-automation/get-profile-history",
+        "limova/linkedin-automation/get-cv",
+        "limova/linkedin-automation/get-connections",
+        "limova/linkedin-automation/get-connections-and-messages-stats",
+        "limova/linkedin-automation/get-conversation-messages",
+        "limova/linkedin-automation/get-message-inbox",
+        "limova/linkedin-automation/send-message",
+        "limova/linkedin-automation/send-second-message",
+        "limova/linkedin-automation/send-connection-request",
+        "limova/linkedin-automation/get-invitation-status",
+        "limova/linkedin-automation/get-pending-invitations",
+        "limova/linkedin-automation/accept-invitation",
+        "limova/linkedin-automation/like-post",
+        "limova/linkedin-automation/comment-on-post",
+        "limova/linkedin-automation/get-post-comments",
+        "limova/linkedin-automation/get-post-reactions",
+        "limova/linkedin-automation/get-network-recommendations",
+        "limova/linkedin-automation/get-job-posts",
+        "limova/linkedin-automation/get-available-credits",
+        "limova/linkedin-automation/check-login-token",
+        "limova/linkedin-automation/delete-token-from-cache",
+        "limova/linkedin-automation/save-research-params",
+        "limova/linkedin-automation/get-research-params",
+        "limova/linkedin-automation/delete-research-params",
+        "limova/linkedin-automation/save-company-research-params",
+        "limova/linkedin-automation/get-company-research-params",
+        "limova/linkedin-automation/delete-company-research-params",
+        "limova/linkedin-automation/get-research-results",
+        "limova/linkedin-automation/get-research-results-by-id",
+        "limova/linkedin-automation/delete-research-results",
+        "limova/linkedin-automation/remove-profile-research-result",
+        "limova/linkedin-automation/get-all-profiles-in-research",
+        "limova/linkedin-automation/create-research-result",
+        "limova/linkedin-automation/get-candidates",
+        "limova/linkedin-automation/delete-prospect",
+        "limova/linkedin-automation/create-campaign",
+        "limova/linkedin-automation/get-campaigns",
+        "limova/linkedin-automation/get-campaign-by-id",
+        "limova/linkedin-automation/delete-campaign"
+      ]
+    },
+    {
+      "group": "LIMOVA - Instagram",
+      "pages": [
+        "limova/instagram/introduction",
+        "limova/instagram/create-job",
+        "limova/instagram/get-jobs",
+        "limova/instagram/get-job-by-id",
+        "limova/instagram/update-job",
+        "limova/instagram/delete-job",
+        "limova/instagram/get-job-history",
+        "limova/instagram/get-job-history-by-id",
+        "limova/instagram/update-job-history",
+        "limova/instagram/delete-job-history",
+        "limova/instagram/get-user-info",
+        "limova/instagram/share"
+      ]
+    },
+    {
+      "group": "LIMOVA - Facebook",
+      "pages": [
+        "limova/facebook/introduction",
+        "limova/facebook/create-job",
+        "limova/facebook/get-jobs",
+        "limova/facebook/get-job-by-id",
+        "limova/facebook/update-job",
+        "limova/facebook/delete-job",
+        "limova/facebook/get-job-history",
+        "limova/facebook/get-job-history-by-id",
+        "limova/facebook/update-job-history",
+        "limova/facebook/delete-job-history",
+        "limova/facebook/get-pages",
+        "limova/facebook/share"
+      ]
+    },
+    {
+      "group": "LIMOVA - Outils",
+      "pages": [
+        "limova/tools/browser",
+        "limova/tools/image-generation",
+        "limova/tools/speech-to-text",
+        "limova/tools/pdf-manipulator",
+        "limova/tools/slides-generation"
+      ]
+    },
+    {
+      "group": "RobotAppel",
+      "pages": [
+        "robotappel/introduction",
+        "robotappel/calls/create",
+        "robotappel/calls/get-all",
+        "robotappel/calls/get-by-id",
+        "robotappel/calls/update",
+        "robotappel/calls/delete",
+        "robotappel/calls/start",
+        "robotappel/calls/stop",
+        "robotappel/call-history",
+        "robotappel/notes",
+        "robotappel/phone-numbers"
+      ]
+    },
+    {
+      "group": "Chat",
+      "pages": [
+        "chat/introduction",
+        "chat/get-conversations-ids"
+      ]
+    },
+    {
+      "group": "Bot",
+      "pages": [
+        "bot/introduction",
+        "bot/set-agent"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/limova",
+    "github": "https://github.com/limova",
+    "linkedin": "https://linkedin.com/company/limova"
+  }
+} 

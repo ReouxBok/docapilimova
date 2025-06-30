@@ -1,0 +1,20 @@
+# LIMOVA - Suppression de l'Historique d'un Job Instagram
+
+## Route
+
+### Supprimer l'historique d'un job Instagram
+**DELETE** `/instagram/deleteInstagramJobHistory/{id}`
+
+Supprime l'historique d'un job Instagram.
+
+**Paramètres :**
+- `id` (string, requis) : L'ID du job Instagram
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "$ref": "#/components/schemas/InstagramJobDto"
+}
+``` 

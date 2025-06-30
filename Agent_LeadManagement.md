@@ -1,0 +1,129 @@
+# Agent - Gestion des Leads
+
+## Description
+Ce module gère la création, la mise à jour et le suivi des leads générés par les agents IA.
+
+## Routes
+
+### Récupérer tous les leads
+**GET** `/agent/lead`
+
+Récupère tous les leads disponibles.
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/AgentLeadDto"
+  }
+}
+```
+
+### Récupérer un lead par ID
+**GET** `/agent/lead/{id}`
+
+Récupère un lead spécifique par son ID.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID du lead
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "$ref": "#/components/schemas/AgentLeadDto"
+}
+```
+
+### Créer un lead
+**POST** `/agent/lead/{conversationId}`
+
+Crée un nouveau lead à partir d'une conversation d'agent.
+
+**Paramètres :**
+- `conversationId` (path, requis) : L'ID de la conversation d'agent
+
+**Corps de requête :**
+```json
+{
+  "$ref": "#/components/schemas/UpdateAgentLeadDto"
+}
+```
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "$ref": "#/components/schemas/AgentLeadDto"
+}
+```
+
+### Mettre à jour un lead
+**PUT** `/agent/lead/{agentConversationId}`
+
+Met à jour un lead existant.
+
+**Paramètres :**
+- `agentConversationId` (path, requis) : L'ID de la conversation d'agent
+
+**Corps de requête :**
+```json
+{
+  "$ref": "#/components/schemas/UpdateAgentLeadDto"
+}
+```
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "$ref": "#/components/schemas/AgentLeadDto"
+}
+```
+
+### Supprimer un lead
+**DELETE** `/agent/lead/{agentConversationId}`
+
+Supprime un lead.
+
+**Paramètres :**
+- `agentConversationId` (path, requis) : L'ID de la conversation d'agent
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "$ref": "#/components/schemas/AgentLeadDto"
+}
+```
+
+### Mettre à jour le statut d'un lead
+**PUT** `/agent/lead/{agentConversationId}/status`
+
+Met à jour le statut d'un lead.
+
+**Paramètres :**
+- `agentConversationId` (path, requis) : L'ID de la conversation d'agent
+
+**Corps de requête :**
+```json
+{
+  "status": "not-contacted | not-interested | interested | contacted"
+}
+```
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "$ref": "#/components/schemas/AgentLeadDto"
+}
+``` 

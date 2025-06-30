@@ -1,0 +1,116 @@
+---
+title: 'Agent ConversationManagement'
+description: 'Documentation pour Agent ConversationManagement'
+---
+
+# Agent - Gestion des Conversations
+
+## Description
+Ce module gère les conversations des agents IA, incluant l'exportation et la mise à jour.
+
+## Routes
+
+### Exporter des conversations par IDs
+**POST** `/agent/conversation/exportConversationByIds`
+
+Exporte des conversations spécifiques par leurs IDs.
+
+**Paramètres :**
+- `header` (query, optionnel) : Champs d'en-tête optionnels (séparés par des virgules)
+  - Headers disponibles : id, status, updatedAt, summary, lastSummaryAt, qualification, name, agentId, clean_interraction, interraction
+
+**Corps de requête :**
+```json
+{
+  "type": "array",
+  "items": {
+    "type": "string"
+  }
+}
+```
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "url": "string"
+}
+```
+
+### Mettre à jour une conversation
+**PUT** `/agent/conversation/conversation/{id}`
+
+Met à jour une conversation d'agent.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID de la conversation
+
+**Corps de requête :**
+```json
+{
+  "$ref": "#/components/schemas/UpdateConversationDto"
+}
+```
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": "Successfully updated conversation"
+}
+```
+
+### Supprimer une conversation
+**DELETE** `/agent/conversation/conversation/{id}`
+
+Supprime une conversation d'agent.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID de la conversation à supprimer
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "$ref": "#/components/schemas/ConversationDto"
+}
+```
+
+### Récupérer les conversations par agent
+**GET** `/agent/conversation/conversationByAgent/{agentId}`
+
+Récupère toutes les conversations d'un agent spécifique.
+
+**Paramètres :**
+- `agentId` (path, requis) : L'ID de l'agent
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": "Successfully retrieved conversations"
+}
+```
+
+### Exporter les conversations par agent
+**GET** `/agent/conversation/exportConversationByAgentId/{agentId}`
+
+Exporte toutes les conversations d'un agent.
+
+**Paramètres :**
+- `agentId` (path, requis) : L'ID de l'agent
+- `header` (query, optionnel) : Champs d'en-tête optionnels (séparés par des virgules)
+  - Headers disponibles : id, status, updatedAt, summary, lastSummaryAt, qualification, name, agentId, clean_interraction, interraction
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "url": "string"
+}
+``` 

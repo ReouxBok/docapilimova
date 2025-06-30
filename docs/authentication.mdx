@@ -1,0 +1,95 @@
+---
+title: 'Authentification'
+description: 'Guide dauthentification pour lAPI Limova'
+---
+
+# Authentification
+
+L'API Limova utilise l'authentification par token Bearer pour sécuriser toutes les requêtes.
+
+## 🔑 Méthode d'authentification
+
+### Token Bearer
+
+Toutes les requêtes à l'API doivent inclure un header d'autorisation :
+
+```bash
+Authorization: Bearer YOUR_TOKEN
+```
+
+### Exemple de requête
+
+```bash
+curl -X GET "https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net/agent" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json"
+```
+
+## 📋 Headers requis
+
+### Authentification
+- `Authorization: Bearer <token>` - **Obligatoire** pour toutes les requêtes
+
+### Content-Type
+- `Content-Type: application/json` - Pour les requêtes POST/PUT/PATCH avec body JSON
+- `Content-Type: multipart/form-data` - Pour les uploads de fichiers
+
+## 🔐 Obtenir votre token
+
+1. Connectez-vous à votre [dashboard Limova](https://dashboard.limova.com)
+2. Allez dans la section "API Keys" ou "Tokens"
+3. Générez un nouveau token
+4. Copiez le token et utilisez-le dans vos requêtes
+
+## ⚠️ Sécurité
+
+### Bonnes pratiques
+- **Ne partagez jamais** votre token
+- **Stockez le token** de manière sécurisée (variables d'environnement)
+- **Régénérez le token** régulièrement
+- **Utilisez HTTPS** pour toutes les requêtes
+
+### Exemple de stockage sécurisé
+
+```bash
+# Variables d'environnement
+export LIMOVA_TOKEN="your_token_here"
+
+# Utilisation
+curl -X GET "https://kainotomiaprodbackend-brbzd3f2gjbugtcd.francecentral-01.azurewebsites.net/agent" \
+  -H "Authorization: Bearer $LIMOVA_TOKEN" \
+  -H "Content-Type: application/json"
+```
+
+## 🚫 Codes d'erreur d'authentification
+
+| Code | Signification | Solution |
+|------|---------------|----------|
+| 401 | Token manquant ou invalide | Vérifiez votre token |
+| 403 | Token expiré ou insuffisant | Régénérez votre token |
+| 429 | Trop de requêtes | Respectez les limites de taux |
+
+## 📊 Limites de taux
+
+- **Requêtes par minute** : 100
+- **Requêtes par heure** : 1000
+- **Requêtes par jour** : 10000
+
+Ces limites peuvent varier selon votre plan d'abonnement.
+
+## 🔄 Régénération de token
+
+Si votre token expire ou est compromis :
+
+1. Connectez-vous à votre dashboard
+2. Allez dans "API Keys"
+3. Révoquez l'ancien token
+4. Générez un nouveau token
+5. Mettez à jour vos applications
+
+## 📞 Support
+
+En cas de problème d'authentification :
+- Vérifiez que votre token est valide
+- Contactez le support : support@limova.com
+- Consultez les logs de votre dashboard 

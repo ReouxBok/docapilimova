@@ -1,0 +1,103 @@
+---
+title: 'Bot ChatbotManagement'
+description: 'Documentation pour Bot ChatbotManagement'
+---
+
+# Bot - Gestion des Chatbots
+
+## Routes de Gestion des Bots
+
+### Obtenir tous les bots agents
+**GET** `/bot/getall`
+
+Récupère tous les bots agents.
+
+**Coût :** 5 Token(s)
+
+### Créer un nouveau bot agent
+**POST** `/bot/create`
+
+Crée un nouveau bot agent.
+
+**Corps de la requête :**
+```multipart/form-data
+{
+  "systemPrompt": "Tu es un expert en rédaction de demandes de subventions...",
+  "gender": "M",
+  "title": "Subvention writer",
+  "botName": "Subvention writer",
+  "logo": "binary",
+  "target": "ASSO",
+  "nameColor": "#000000",
+  "gradColorside": "5CCCF1,2B6179",
+  "gradColorChat": "#000000",
+  "tiers": "telephony",
+  "headLogo": "binary",
+  "status": "active"
+}
+```
+
+**Coût :** 20 Token(s) + 0.2 Token(s) par MB
+
+### Mettre à jour un bot agent
+**PUT** `/bot/update/{botId}`
+
+Met à jour un bot agent existant.
+
+**Paramètres :**
+- `botId` (path, requis) : L'ID du bot à mettre à jour
+
+**Coût :** 5 Token(s) + 0.2 Token(s) par MB
+
+### Définir le type d'un bot
+**PUT** `/bot/set-type/{botId}`
+
+Définit le type d'un bot agent.
+
+**Paramètres :**
+- `botId` (path, requis) : L'ID du bot
+
+**Corps de la requête :**
+```json
+{
+  "type": "AGENTIA"
+}
+```
+
+**Types disponibles :** SYSTEMPROMPT, AGENTIA, SEMANTIC
+
+**Coût :** 5 Token(s)
+
+### Définir l'agent d'un bot
+**PUT** `/bot/set-agent/{botId}`
+
+Définit l'agent d'un bot agent.
+
+**Paramètres :**
+- `botId` (path, requis) : L'ID du bot
+
+**Corps de la requête :**
+```json
+{
+  "botId": "1234567890"
+}
+```
+
+**Coût :** 5 Token(s)
+
+### Télécharger un fichier pour un bot
+**POST** `/bot/file/{botAgentId}`
+
+Télécharge un fichier pour un bot agent.
+
+**Paramètres :**
+- `botAgentId` (path, requis) : L'ID du bot agent
+
+**Corps de la requête :**
+```multipart/form-data
+{
+  "file": "binary"
+}
+```
+
+**Coût :** 5 Token(s) + 0.2 Token(s) par MB 

@@ -1,0 +1,20 @@
+# LIMOVA - Historique des Posts Sociaux
+
+## Route
+
+### Récupérer l'historique des posts sociaux
+**GET** `/socialPost/getSocialPostHistory`
+
+Récupère l'historique des posts sociaux.
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/SocialPostDto"
+  }
+}
+``` 

@@ -1,0 +1,155 @@
+# Agent - Gestion des Agents
+
+## Description
+Ce module gère la création, la modification et la configuration des agents IA.
+
+## Routes
+
+### Récupérer tous les agents
+**GET** `/agent`
+
+Récupère tous les agents disponibles.
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": "Successfully retrieved agents"
+}
+```
+
+### Créer un nouvel agent
+**POST** `/agent`
+
+Crée un nouvel agent.
+
+**Corps de requête :**
+```json
+{
+  "$ref": "#/components/schemas/CreateAgentDto"
+}
+```
+
+**Coût :** 20 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": "Successfully created agent"
+}
+```
+
+### Mettre à jour un agent
+**PUT** `/agent/{id}`
+
+Met à jour un agent existant.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID de l'agent à mettre à jour
+
+**Corps de requête :**
+```json
+{
+  "$ref": "#/components/schemas/CreateAgentDto"
+}
+```
+
+**Coût :** 20 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": "Successfully updated agent"
+}
+```
+
+### Supprimer un agent
+**DELETE** `/agent/{id}`
+
+Supprime un agent.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID de l'agent à supprimer
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": "Successfully deleted agent"
+}
+```
+
+### Ajouter des fichiers et textes à un agent
+**PUT** `/agent/files-texts/{id}`
+
+Ajoute des fichiers et textes à un agent.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID de l'agent
+
+**Corps de requête :**
+```json
+{
+  "multipart/form-data": {
+    "files": [
+      {
+        "type": "string",
+        "format": "binary"
+      }
+    ],
+    "text": "string"
+  }
+}
+```
+
+**Coût :** 20 Token(s) + 0.2 Token(s) par MB de requête
+
+**Réponse :**
+```json
+{
+  "description": ""
+}
+```
+
+### Supprimer des fichiers et textes d'un agent
+**DELETE** `/agent/files-texts/{id}`
+
+Supprime des fichiers et textes d'un agent.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID de l'agent
+
+**Corps de requête :**
+```json
+{
+  "$ref": "#/components/schemas/RemoveFilesAndTextsDto"
+}
+```
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": ""
+}
+```
+
+### Désactiver un agent
+**PUT** `/agent/desactivate/{id}`
+
+Désactive un agent.
+
+**Paramètres :**
+- `id` (path, requis) : L'ID de l'agent à désactiver
+
+**Coût :** 5 Token(s)
+
+**Réponse :**
+```json
+{
+  "description": "Successfully desactivated agent"
+}
+``` 
