@@ -50,179 +50,56 @@
       "pages": [
         "api-reference/introduction",
         "api-reference/quickstart",
-        "api-reference/authentication"
+        "api-reference/authentication",
+        "api-reference/routes-par-agent"
       ]
     },
     {
-      "group": "Agents",
+      "group": "John - Réseaux sociaux & Publication",
       "pages": [
-        "api-reference/agents/create",
-        "api-reference/agents/get-all",
-        "api-reference/agents/update",
-        "api-reference/agents/delete",
-        "api-reference/agents/desactivate",
-        "api-reference/agents/add-files",
-        "api-reference/agents/remove-files"
+        "api-reference/John"
       ]
     },
     {
-      "group": "Conversations",
+      "group": "Mickael - Chatbots & IA",
       "pages": [
-        "api-reference/conversations/get-by-agent",
-        "api-reference/conversations/update",
-        "api-reference/conversations/delete",
-        "api-reference/conversations/export-by-agent",
-        "api-reference/conversations/export-by-ids"
+        "api-reference/Mickael"
       ]
     },
     {
-      "group": "Leads",
+      "group": "Lou - SEO & Rédaction",
       "pages": [
-        "api-reference/leads/create",
-        "api-reference/leads/get-all",
-        "api-reference/leads/get-by-id",
-        "api-reference/leads/get-by-conversation",
-        "api-reference/leads/update",
-        "api-reference/leads/update-status",
-        "api-reference/leads/delete"
+        "api-reference/Lou"
       ]
     },
     {
-      "group": "Connecteurs",
+      "group": "Elio - LinkedIn & Prospection",
       "pages": [
-        "api-reference/connectors/snippet-create",
-        "api-reference/connectors/snippet-get-all",
-        "api-reference/connectors/snippet-get-by-agent",
-        "api-reference/connectors/snippet-update",
-        "api-reference/connectors/snippet-delete",
-        "api-reference/connectors/snippet-get-heads",
-        "api-reference/connectors/snippet-upload-heads",
-        "api-reference/connectors/whatsapp-get-first-message",
-        "api-reference/connectors/whatsapp-set-first-message"
+        "api-reference/Elio"
       ]
     },
     {
-      "group": "LIMOVA - Billing",
+      "group": "Tom - Appels & Communication",
       "pages": [
-        "api-reference/limova/billing/get-bills",
-        "api-reference/limova/billing/get-payment-methods",
-        "api-reference/limova/billing/get-all-active-users",
-        "api-reference/limova/billing/get-balance",
-        "api-reference/limova/billing/add-balance-money",
-        "api-reference/limova/billing/upsert-auto-refill",
-        "api-reference/limova/billing/get-token-balance",
-        "api-reference/limova/billing/buy-token-balance"
+        "api-reference/Tom"
       ]
     },
     {
-      "group": "LIMOVA - Files",
+      "group": "Charly - API & Outils",
       "pages": [
-        "api-reference/limova/files/add-client-file",
-        "api-reference/limova/files/delete-client-file"
+        "api-reference/Charly"
       ]
     },
     {
-      "group": "LIMOVA - Users",
+      "group": "Julia - Juridique",
       "pages": [
-        "api-reference/limova/users/search-by-email"
+        "api-reference/Julia"
       ]
     },
     {
-      "group": "LIMOVA - SEO",
+      "group": "Manue - Comptabilité",
       "pages": [
-        "api-reference/limova/seo/create-job",
-        "api-reference/limova/seo/get-jobs",
-        "api-reference/limova/seo/get-job-by-id",
-        "api-reference/limova/seo/update-job",
-        "api-reference/limova/seo/delete-job",
-        "api-reference/limova/seo/generate-article",
-        "api-reference/limova/seo/get-articles",
-        "api-reference/limova/seo/get-article-by-id",
-        "api-reference/limova/seo/delete-article",
-        "api-reference/limova/seo/create-platform",
-        "api-reference/limova/seo/get-platforms",
-        "api-reference/limova/seo/update-platform",
-        "api-reference/limova/seo/delete-platform"
-      ]
-    },
-    {
-      "group": "LIMOVA - Social Post",
-      "pages": [
-        "api-reference/limova/social-post/create-post",
-        "api-reference/limova/social-post/get-posts",
-        "api-reference/limova/social-post/get-post-by-id",
-        "api-reference/limova/social-post/update-post",
-        "api-reference/limova/social-post/delete-post",
-        "api-reference/limova/social-post/share-now"
-      ]
-    },
-    {
-      "group": "LIMOVA - LinkedIn Automation",
-      "pages": [
-        "api-reference/limova/linkedin-automation/search-profiles",
-        "api-reference/limova/linkedin-automation/search-companies",
-        "api-reference/limova/linkedin-automation/get-profile-info",
-        "api-reference/limova/linkedin-automation/get-company-info",
-        "api-reference/limova/linkedin-automation/send-connection-request",
-        "api-reference/limova/linkedin-automation/send-message",
-        "api-reference/limova/linkedin-automation/like-post",
-        "api-reference/limova/linkedin-automation/comment-on-post"
-      ]
-    },
-    {
-      "group": "LIMOVA - Instagram",
-      "pages": [
-        "api-reference/limova/instagram/create-job",
-        "api-reference/limova/instagram/get-jobs",
-        "api-reference/limova/instagram/get-job-by-id",
-        "api-reference/limova/instagram/update-job",
-        "api-reference/limova/instagram/delete-job",
-        "api-reference/limova/instagram/share"
-      ]
-    },
-    {
-      "group": "LIMOVA - Facebook",
-      "pages": [
-        "api-reference/limova/facebook/create-job",
-        "api-reference/limova/facebook/get-jobs",
-        "api-reference/limova/facebook/get-job-by-id",
-        "api-reference/limova/facebook/update-job",
-        "api-reference/limova/facebook/delete-job",
-        "api-reference/limova/facebook/share"
-      ]
-    },
-    {
-      "group": "LIMOVA - Tools",
-      "pages": [
-        "api-reference/limova/tools/browser",
-        "api-reference/limova/tools/image-generation",
-        "api-reference/limova/tools/speech-to-text",
-        "api-reference/limova/tools/pdf-manipulator",
-        "api-reference/limova/tools/slides-generation"
-      ]
-    },
-    {
-      "group": "RobotAppel",
-      "pages": [
-        "api-reference/robotappel/create",
-        "api-reference/robotappel/get-all",
-        "api-reference/robotappel/get-by-id",
-        "api-reference/robotappel/update",
-        "api-reference/robotappel/delete",
-        "api-reference/robotappel/start",
-        "api-reference/robotappel/stop"
-      ]
-    },
-    {
-      "group": "Chat",
-      "pages": [
-        "api-reference/chat/get-conversations-ids"
-      ]
-    },
-    {
-      "group": "Bot",
-      "pages": [
-        "api-reference/bot/set-agent"
+        "api-reference/Manue"
       ]
     }
   ],
